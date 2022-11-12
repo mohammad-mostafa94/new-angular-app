@@ -1,0 +1,28 @@
+<h2>Programming Language Book lists</h2>
+<!-- <button (click)="handleClink()" (mouseenter)="handleClink()" [disabled]="isDisabled">Show Button</button> -->
+
+<!-- <input type="text" (input)="handleInput($event)">
+    <input type="text" [(ngModel)]="userName"> -->
+<!-- <div class="">{{userName}}</div> -->
+
+
+<button (click)="isShowing = !isShowing">
+    <ng-container *ngIf="!isShowing">Show Books</ng-container>
+    <ng-container *ngIf="isShowing">Hide Books</ng-container>
+    <!-- <span *ngIf="!isShowing">Show Books</span>
+    <span *ngIf="isShowing">Hide Books</span> -->
+    || Toggle Button
+</button>
+<ul *ngIf="isShowing">
+    <!-- <img [width]="100" [src]=image [alt]="name">
+    <li>{{name}} by {{author}}</li> -->
+    <ng-container *ngFor="let book of books; let i= index ">
+
+        <li>
+            {{i+1}}
+            <img [width]="100" [src]="book.image" [alt]="book.name">
+            {{book.name | titlecase}} by {{book.author | titlecase}}
+            <p>{{book.amount | currency}}</p>
+        </li>
+    </ng-container>
+</ul>
