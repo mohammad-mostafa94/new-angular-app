@@ -1,0 +1,14 @@
+ul{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.book{
+    list-style: none;
+    text-overflow: ellipsis;
+    width: 20%;
+    margin-right: 5px;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid red;
+}

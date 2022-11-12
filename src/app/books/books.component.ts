@@ -1,11 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Books } from '../types/book';
 
-interface Books {
-  name: string
-  author: string;
-  image: string;
-  amount:number;
-}
 
 @Component({
   selector: 'app-books',
@@ -21,16 +16,30 @@ export class BooksComponent implements OnInit {
   books: Books[] = [
     {
       name: 'Clean Code',
-      author: 'Robert C. Martin',
+      author: ' C. Martin',
       image: 'https://m.media-amazon.com/images/I/41xShlnTZTL._SX376_BO1,204,203,200_.jpg',
       amount:2000,
 
     },
     {
-      name: 'Clean Code',
-      author: 'Robert C. Martin',
+      name: 'Algorithm ',
+      author: 'Robert',
       image: 'https://m.media-amazon.com/images/I/41xShlnTZTL._SX376_BO1,204,203,200_.jpg',
-      amount:3000
+      amount:100
+
+    },
+    {
+      name: 'First Thinking',
+      author: 'Martin',
+      image: 'https://m.media-amazon.com/images/I/41xShlnTZTL._SX376_BO1,204,203,200_.jpg',
+      amount:300
+
+    },
+    {
+      name: 'Second Thinking',
+      author: 'Robert',
+      image: 'https://m.media-amazon.com/images/I/41xShlnTZTL._SX376_BO1,204,203,200_.jpg',
+      amount:500
 
     },
 
