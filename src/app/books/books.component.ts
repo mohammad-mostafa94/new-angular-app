@@ -42,9 +42,10 @@ export class BooksComponent implements OnInit {
       amount:500
 
     },
+]
 
-
-  ]
+// for output(parent to child data)-1
+card: Books[] = [];
 
   isDisabled: boolean = false;
 
@@ -64,6 +65,10 @@ export class BooksComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  addToCart(book: Books){
+    console.log(book);
   }
 
 }
