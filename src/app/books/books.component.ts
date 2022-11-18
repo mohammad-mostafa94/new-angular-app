@@ -1,6 +1,7 @@
+import { Books } from './../types/book';
+import { BooksService } from './books.service';
 import { Component, OnInit } from '@angular/core';
-import { Books } from '../types/book';
-
+// import { Books } from '../types/book';
 
 @Component({
   selector: 'app-books',
@@ -9,40 +10,15 @@ import { Books } from '../types/book';
 })
 export class BooksComponent implements OnInit {
 
+  constructor(private booksService: BooksService) { 
+
+  }
+
   // name:string='Clean Code';
   // author:string='Robert C. Martin';
   // image:string='https://m.media-amazon.com/images/I/41xShlnTZTL._SX376_BO1,204,203,200_.jpg'
 
-  books: Books[] = [
-    {
-      name: 'Clean Code',
-      author: ' C. Martin',
-      image: 'https://m.media-amazon.com/images/I/41xShlnTZTL._SX376_BO1,204,203,200_.jpg',
-      amount:2000,
-
-    },
-    {
-      name: 'Algorithm ',
-      author: 'Robert',
-      image: 'https://m.media-amazon.com/images/I/41xShlnTZTL._SX376_BO1,204,203,200_.jpg',
-      amount:100
-
-    },
-    {
-      name: 'First Thinking',
-      author: 'Martin',
-      image: 'https://m.media-amazon.com/images/I/41xShlnTZTL._SX376_BO1,204,203,200_.jpg',
-      amount:300
-
-    },
-    {
-      name: 'Second Thinking',
-      author: 'Robert',
-      image: 'https://m.media-amazon.com/images/I/41xShlnTZTL._SX376_BO1,204,203,200_.jpg',
-      amount:500
-
-    },
-]
+  books: Books[] = [];
 
 // for output(parent to child data)-1
 card: Books[] = [];
@@ -62,9 +38,9 @@ card: Books[] = [];
 
   isShowing: boolean = true;
 
-  constructor() { }
 
   ngOnInit(): void {
+    this.books = this.booksService.getBooks();
   }
 
   addToCart(book: Books){

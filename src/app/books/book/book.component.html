@@ -1,10 +1,10 @@
 
-<li class="book">
+<li class="book ml-8 ">
     <!-- <p>{{i+1}}</p> -->
     <img [width]="100" [src]="book.image" [alt]="book.name">
     <p>{{book.name | titlecase}} by {{book.author | titlecase}}</p>
     <p>{{book.amount | currency}}</p>
 
   <!-- for output(parent to child data)-2 -->
-    <button (click)="addToCart()">Add to Cart</button>
+    <button class="bg-sky-500 hover:bg-sky-700 p-1 m-1 rounded-md"(click)="addToCart()">Add to Cart</button>
 </li>

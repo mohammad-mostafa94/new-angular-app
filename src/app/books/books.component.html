@@ -6,14 +6,14 @@
 <!-- <div class="">{{userName}}</div> -->
 
 
-<button (click)="isShowing = !isShowing">
+<button class="bg-blue-500 hover:bg-blue-700 p-2 m-2 rounded-md" (click)="isShowing = !isShowing">
     <ng-container *ngIf="!isShowing">Show Books</ng-container>
     <ng-container *ngIf="isShowing">Hide Books</ng-container>
     <!-- <span *ngIf="!isShowing">Show Books</span>
     <span *ngIf="isShowing">Hide Books</span> -->
     || Toggle Button
 </button>
-<ul *ngIf="isShowing">
+<ul class="my-8" *ngIf="isShowing">
     <!-- <img [width]="100" [src]=image [alt]="name">
     <li>{{name}} by {{author}}</li> -->
     <ng-container *ngFor="let singleBook of books; let i= index ">
